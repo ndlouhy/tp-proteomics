@@ -137,7 +137,7 @@ for entry in proteins:
             break
 ```
 
-Cherchez par exemple le sous arbre de la protéine nommée `DACD_ECOLI`
+<!-- Cherchez par exemple le sous arbre de la protéine nommée `DACD_ECOLI` -->
 
 ### Statistiques de termes GO
 
@@ -306,7 +306,7 @@ ax.plot(x, norm.pdf(x, mu, sqrt(S_2))*scale) # compute theoritical PDF and draw 
 Sont condidérées comme surabondantes les proteines remplissant ces deux critères:
 
 * <img src="https://render.githubusercontent.com/render/math?math=\text{Log}_2(\text{abundance ratio})\gt\mu%2B\sigma">  
-* <img src="https://render.githubusercontent.com/render/math?math=\text{p-value}>0.001">
+* <img src="https://render.githubusercontent.com/render/math?math=\text{p-value}<0.001">
 
 ![Volcano plot + quadrant à inserez ici](histogram_log2FC.png "Title")
 
@@ -314,7 +314,7 @@ Sont condidérées comme surabondantes les proteines remplissant ces deux critè
 
 Nous allons implementer une approche ORA (Over Representation Analysis) naive.
 
-##### 1. Retrouver les entrées du fichier TSV des protéines surabondates
+##### 1. Retrouver les entrées du fichier TSV des protéines surabondantes
 
 Quelles sont leurs identifiants UNIPROT ?
 ``` 
@@ -335,14 +335,56 @@ Les `entry` du fichier `data/uniprot-proteome_UP000000625.xml` présentent des b
 </dbReference>
 ```
 
-A ce stade, on se contentera des identifiants GO (eg `GO:0005737`). Vous pouvez faire un [set](https://docs.python.org/3.8/library/stdtypes.html#set) de cette liste d'identifiants GO pour en éliminer rapidement la redondance.
+Pour vous aider à obtenir la liste des termes GO des protéines surabondantes, voici la fonction `getAccessionGOTerms(xml_file, uniprotID)`
+qui extrait du fichier de protéome uniprot xml fourni en 1er argument les termes GO portés par la protéine au code uniprot fourni en deuxième argument.
+
+```python
+from xml.etree.ElementTree import parse, dump
+
+def getAccessionGOTerms(xmlFile, accession):
+    tree = parse(xmlFile)
+    root = tree.getroot()
+    ns = '{http://uniprot.org/uniprot}'
+    
+    match_go_terms = []
+    proteins = root.findall(ns + 'entry')
+    for entry in proteins:
+        accessions = entry.findall(ns+"accession")
+        current_accessions = [ acc.text for acc in accessions ]
+        if not accession in current_accessions:
+            continue
+        goTerms = entry.findall('{http://uniprot.org/uniprot}dbReference[@type="GO"]')
+        #goTerms = xmlEntry.findall(ns +'dbReference[@type="GO"]')
+        for goT in goTerms:
+            gID   = goT.attrib['id']
+            gName = goT.find(ns +'property[@type="term"]').attrib['value']
+            match_go_terms.append((gID, gName))
+        break
+    return match_go_terms
+getAccessionGOTerms("./data/uniprot-proteome_UP000000625.xml", "P0A8V6")
+```
+A l'aide de cette fonction, il devrait être possible de construire le dictonnaire des termes GO de toutes les protéines surabondantes précedemment identifiées.
+Ce dictionnaire pourrait être de la forme suivante:
+```python
+{'GO:0005829': {'ID'        : 'GO:0005829',
+                'name'      : 'C:cytosol',
+                'carried_by': ['P0A8V6', 'P0A9Q1', 'P02358', 'P0ACF8', 'P62399', 'P76344']
+                },
+ 'GO:0003677': {'ID'        : 'GO:0003677',
+                'name'      : 'F:DNA binding',
+                'carried_by': ['P0A8V6', 'P0ACF8']
+                }
+  }
+```
+Vous implémenterez la construction de ce dictionnaire et ainsi stockerez, pour la suite de l'analyse, les représentations des termes GO parmi les protéines surabondantes.
 
 #### 3. Obtention des paramètres du modèle
 
-Nous evaluerons la significativité de la présence de tous les termes GO portés par les protéines surabondantes à l'aide d'un modèle hypergéometrique.
+Nous evaluerons la significativité de la présence de tous les termes GO portés par les protéines surabondantes à l'aide d'un [modèle hypergéometrique](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html).
 
 Si k protéines surabondantes porte un terme GO, la pvalue de ce terme sera équivalente à <img src="https://render.githubusercontent.com/render/math?math=P(X\ge k), X \sim H(k,K,n,N)">.
-Completer le tableau ci-dessous avec les quantités vous  semblant adéquates
+
+Completer le tableau ci-dessous avec les quantités vous semblant adéquates pour modeliser la pvalue de **chaque pathway [termes GO]**
 
 | Symboles | Paramètres | Quantités Biologiques |
 | --- | --- | --- |
