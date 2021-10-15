@@ -286,7 +286,7 @@ hist = ax.hist(_, bins=100) # draw histogram
 x = np.linspace(min(_), max(_), 100) # generate PDF domain points
 dx = hist[1][1] - hist[1][0] # Get single value bar height
 scale = len(_)*dx # scale accordingly
-ax.plot(x, norm.pdf(x, mu, sqrt(S_2))*scale) # compute theoritical PDF and draw it
+ax.plot(x, norm.pdf(x, mu, sigma)*scale) # compute theoritical PDF and draw it
 ```
 
 ![Histogramme à inserez ici](histogram_log2FC.png "Title")
