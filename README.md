@@ -1,4 +1,4 @@
-# TP de Protéomique LYON@BioInfo 2021
+# TP de Protéomique 5BIM 2021
 ## Contexte Biologique
 Vous allez utiliser des outils informatiques qui vous permettront d’analyser des données brutes issues d’une analyse Shotgun Proteomics récemment publiée dans le journal Science sous le titre "Real-time visualization of drug resistance acquisition by horizontal gene transfer reveals a new role for AcrAB-TolC multidrug efflux pump".
 
