@@ -25,7 +25,7 @@ Il vous est conseillé d'installer un environnement virtuel python pour installe
 Depuis le repertoire de votre repository Git, installez le package scipy et lancez jupyter.
 
 ```sh
-$PATH_TO_CONDA_DIR/bin/conda install -c conda-forge scipy notebook
+$PATH_TO_CONDA_DIR/bin/conda install -c conda-forge scipy notebook matplotlib
 $PATH_TO_CONDA_DIR/bin/jupyter notebook
 ```
 
@@ -39,7 +39,7 @@ Activer l'environnement virtuel et installer les packages.
 
 ```
 source MADP_TP1/bin/activate.sh
-pip install --user ipykernel scipy notebook
+pip install --user ipykernel scipy notebook matplotlib
 ```
 #### Procédure VM IFB
 
@@ -66,7 +66,7 @@ Dans l'inteface de jupyter, créez un nouveau fichier notebook (*.ipynb) localis
 Dans la première cellule copiez le code suivant:
 
 ```python
-%matplotlib nbagg
+%matplotlib inline
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import norm
