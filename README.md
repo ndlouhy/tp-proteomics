@@ -1,4 +1,4 @@
-# TP de Protéomique 5BIM 2021
+# TP de Protéomique MADP 2022
 ## Contexte Biologique
 Vous allez utiliser des outils informatiques qui vous permettront d’analyser des données brutes issues d’une analyse Shotgun Proteomics récemment publiée dans le journal Science sous le titre "Real-time visualization of drug resistance acquisition by horizontal gene transfer reveals a new role for AcrAB-TolC multidrug efflux pump".
 
@@ -33,7 +33,7 @@ $PATH_TO_CONDA_DIR/bin/jupyter notebook
 
 Créer l'environnement virtuel.
 
-```python -m venv MADP_TP1```
+```python -m venv MADP_TP```
 
 Activer l'environnement virtuel et installer les packages.
 
@@ -54,7 +54,7 @@ Le repertoire racine de Jupyter est `/mnt/mydatalocal/`
 Il peut être pratique d'ajouter votre environnement à Jupyter. Cela se réalise depuis l'environnement (conda ou venv) activé.
 
 ```
-python -m ipykernel install --user --name=MADP_TP1
+python -m ipykernel install --user --name=MADP_TP
 ```
 
 
