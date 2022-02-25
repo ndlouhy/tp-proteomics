@@ -38,7 +38,7 @@ Créer l'environnement virtuel.
 Activer l'environnement virtuel et installer les packages.
 
 ```
-source MADP_TP1/bin/activate.sh
+source MADP_TP1/bin/activate
 pip install --user ipykernel scipy notebook matplotlib
 ```
 #### Procédure VM IFB
