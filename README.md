@@ -18,7 +18,7 @@ Seul le langage Python (v3.X) est requis pour ce travail.
 Il vous est conseillé d'installer un environnement virtuel python pour installer les libraries requises independamment de votre systèmes d'exploitation.
 
 * Le systême de gestion de paquets [Conda](https://docs.conda.io/en/latest/) est très pratique et disponible pour la plupat des systèmes d'exploitation. Une version légère suffisante pour nos besoin est téléchargeable [ici](https://docs.conda.io/en/latest/miniconda.html)
-* Si vous disposez d'un interpreteur python 3.X installé sur votre systême [virtualenv](https://docs.python.org/3/library/venv.html) est désormais "built-in".
+* Si vous disposez d'un interpreteur python 3.X installé sur votre systême [virtualenv](https://docs.python.org/3/library/venv.html) est désormais "built-in" (cf. Procédure virtualenv).
 
 #### Procédure conda
 
@@ -58,11 +58,11 @@ python -m ipykernel install --user --name=MADP_TP
 ```
 
 
-Jupyter est une environnement de type notebook permettant l'execution de code python dans des cellules avec une persitance des variables entre chaque evaluation de cellule. Jupyter fournit nativement le support de la librarie graphique matplotlib.
+Jupyter est une environnement de type notebook permettant l'exécution de code python dans des cellules avec une persitance des variables entre chaque évaluation de cellule. Jupyter fournit nativement le support de la librarie graphique matplotlib.
 
 ### Test de l'installation
 
-Dans l'inteface de jupyter, créez un nouveau fichier notebook (*.ipynb) localisé dans votre repertoire git.
+Dans l'interface de jupyter, créez un nouveau fichier notebook (*.ipynb) localisé dans votre repertoire git.
 Dans la première cellule copiez le code suivant:
 
 ```python
@@ -291,7 +291,7 @@ ax.plot(x, norm.pdf(x, mu, sigma)*scale) # compute theoritical PDF and draw it
 
 ![Histogramme à inserez ici](histogram_log2FC.png "Title")
 
-##### 5. Quelles remarques peut-on faire à l'observation de l'histogramme et de loi théorique?
+##### 5. Quelles remarques peut-on faire à l'observation de l'histogramme et de la loi théorique?
 
 ```
 
@@ -380,7 +380,7 @@ Vous implémenterez la construction de ce dictionnaire et ainsi stockerez, pour 
 
 #### 3. Obtention des paramètres du modèle
 
-Nous evaluerons la significativité de la présence de tous les termes GO portés par les protéines surabondantes à l'aide d'un [modèle hypergéometrique](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html).
+Nous évaluerons la significativité de la présence de tous les termes GO portés par les protéines surabondantes à l'aide d'un [modèle hypergéometrique](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html).
 
 Si k protéines surabondantes porte un terme GO, la pvalue de ce terme sera équivalente à <img src="https://render.githubusercontent.com/render/math?math=P(X\ge k), X \sim H(k,K,n,N)">.
 
@@ -402,7 +402,7 @@ de chaque terme GO portés par les protéines surabondantes. Vous reporterez ces
 |---|---|---|---|
 |   |   |   |   |
 
-Quelle interpretation biologique faites-vous de cet enrichissement en termes GO spécifiques ?
+Quelle interpretation biologique faites-vous de cet enrichissement en termes GO ?
 
 ```
 
