@@ -404,6 +404,14 @@ de chaque terme GO portés par les protéines surabondantes. Vous reporterez ces
 
 Quelle interpretation biologique faites-vous de cet enrichissement en termes GO ?
 
+
+### Analyse des interactions répertoriées dans STRING
+
+Récupérez les identifiants UNIPROT des protéines sur-exprimées, et chargez-les dans la ressource STRING https://string-db.org/.
+
+Analysez le réseau des interactions connues entre ces protéines.
+
+
 ```
 
 
