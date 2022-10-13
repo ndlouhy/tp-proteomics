@@ -407,7 +407,7 @@ Quelle interpretation biologique faites-vous de cet enrichissement en termes GO 
 
 ### Analyse des interactions répertoriées dans STRING
 
-# Chargement des données dans STRING
+#### Chargement des données dans STRING
 
 Dans le menu de gauche, sélectionner 'Multiple proteins'.
 
@@ -417,7 +417,7 @@ protéines sur-exprimées et spécifier l'organisme 'Escherichia coli K-12".
 Valider le mapping produit par STRING en clickant sur 'Continue'.
 
 
-# Visualisation du réseau dans STRING
+#### Visualisation du réseau dans STRING
 
 
 Combien d'interactions contient ce réseau ?
@@ -454,7 +454,7 @@ Hint: l'onglet Analysis, donne accès aux nombre des interactions du réseau.
 
 ```
 
-# Analyse du réseau des protéines sur-exprimées dans le contexte du réseau global.
+#### Analyse du réseau des protéines sur-exprimées dans le contexte du réseau global.
 
 Consulter la rubrique 'Network Stats' dans l'onglet Settings. 
 
@@ -476,7 +476,7 @@ Que pouvez-vous en déduire sur les mécanismes activés par la présente de té
 
 
 ```
-# Analyse de sur-représentation
+#### Analyse de sur-représentation des termes GO
 
 Consulter l'analyse de sur-représention des termes GO présents dans l'onglet 'Analysis'.
 Est-ce cohérent avec votre analyse précédente ?
