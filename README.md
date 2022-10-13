@@ -407,10 +407,20 @@ Quelle interpretation biologique faites-vous de cet enrichissement en termes GO 
 
 ### Analyse des interactions répertoriées dans STRING
 
-Récupérez les identifiants UNIPROT des protéines sur-exprimées, et chargez-les dans la ressource STRING https://string-db.org/.
+# Chargement des données dans STRING
 
-Analysez le réseau des interactions connues entre ces protéines.
+Dans le menu de gauche, sélectionner 'Multiple proteins'.
 
+Copier-coller les identifiants Uniprot des 
+protéines sur-exprimées et spécifier l'organisme 'Escherichia coli K-12".
+
+Valider le mapping produit par STRING en clickant sur 'Continue'.
+
+
+# Visualisation du réseau dans STRING
+
+
+Combien d'interactions contient ce réseau ?
 
 ```
 
@@ -418,5 +428,65 @@ Analysez le réseau des interactions connues entre ces protéines.
 
 
 ```
+
+Est-ce que ce nombre est attendu ?
+
+```
+
+
+
+
+```
+
+
+Faire varier les paramètres de visualisation du réseau dans 'Settings' pour afficher le réseau fonctionnel
+ou physique avec différents indices de confiance.
+
+
+Combien d'interactions sont supportées par chaque source ('Textmining', 'Experiments', 'Databases','Co-expression',
+'Neighborhood', 'Gene Fusion', 'Co-occurence') ?
+
+Hint: l'onglet Analysis, donne accès aux nombre des interactions du réseau.
+```
+
+
+
+
+```
+
+# Analyse du réseau des protéines sur-exprimées dans le contexte du réseau global.
+
+Consulter la rubrique 'Network Stats' dans l'onglet Settings. 
+
+Que peut-on en conclure sur les interactions de ce petit ensemble de protéines ?
+```
+
+
+
+
+```
+
+Afin de replacer ces protéines dans le contexte du réseau d'interaction global de E. coli, 
+ajouter les interacteurs de la première et de la deuxième couche.
+
+Que pouvez-vous en déduire sur les mécanismes activés par la présente de tétracycline ?
+```
+
+
+
+
+```
+# Analyse de sur-représentation
+
+Consulter l'analyse de sur-représention des termes GO présents dans l'onglet 'Analysis'.
+Est-ce cohérent avec votre analyse précédente ?
+
+```
+
+
+
+
+```
+
 
 
