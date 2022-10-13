@@ -429,15 +429,6 @@ Combien d'interactions contient ce réseau ?
 
 ```
 
-Est-ce que ce nombre est attendu ?
-
-```
-
-
-
-
-```
-
 
 Faire varier les paramètres de visualisation du réseau dans 'Settings' pour afficher le réseau fonctionnel
 ou physique avec différents indices de confiance.
