@@ -481,3 +481,39 @@ Est-ce cohérent avec votre analyse précédente ?
 
 
 
+### Construction de réseaux d'interactions à partir de données MITAB.
+
+Le format (MITAB) stocke des paires de protéines en interaction. Dans ce format, chaque colonne porte une information spécifique.
+Une description du format est disponible [ici](https://psicquic.github.io/MITAB27Format.html).
+Les données d'interactions impliquant les protéines surreprésentées de l'expérience ont été obtenues depuis la base de données [Intact](https://www.ebi.ac.uk/intact/home).
+Ces données sont mises à votre disposition dans le fichier `data/proteins.mitab`.
+
+Vous extrairez du fichier les paires d'identifiants uniprot des protéines en interaction.
+
+Ces paires de protéines constituent un réseau d'interaction protéine-protéine que vous allez dessiner à l'aide de la libraire [networkx](https://networkx.org/documentation/stable/reference).
+Le code suivant vous est fourni à titre d'exemple.
+
+```python
+%matplotlib inline
+import matplotlib.pyplot as plt
+import networkx as nx
+G = nx.Graph()
+
+fig, ax = plt.subplots(figsize=(8, 8))
+
+G.add_edge('a', 'b')
+G.add_edge('e', 'b')
+G.add_edge('e', 'a')
+pos = nx.spring_layout(G)
+nx.draw(G, pos, with_labels=True, node_color=['blue','blue','red'] , node_size=2000)
+```
+
+![exemple reseau](data/reseau_exemple.jpg)
+
+Les positions des noeuds sont paramétrables au travers de l'objet [layout](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.layout.spring_layout.html). Une fois une première représentation du réseau obtenue, affinez celle-ci afin de:
+
+* colorier dans une couleur spécifique uniquement les protéines surabondantes dans l'expérience.
+* Écrire les identifiants uniprot dans les noeuds du réseau.
+* colorier les protéines appartenant à des classes GO communes.
+* Faire du diamètre des noeuds une fonction du nombre de partenaires protéiques.
+
