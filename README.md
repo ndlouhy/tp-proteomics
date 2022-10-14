@@ -447,7 +447,7 @@ Hint: l'onglet Analysis, donne accès aux nombre des interactions du réseau.
 
 #### Analyse du réseau des protéines sur-exprimées dans le contexte du réseau global.
 
-Consulter la rubrique 'Network Stats' dans l'onglet Settings. 
+Consulter la rubrique 'Network Stats' dans l'onglet Analysis. 
 
 Que peut-on en conclure sur les interactions de ce petit ensemble de protéines ?
 ```
