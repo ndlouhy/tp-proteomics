@@ -516,4 +516,6 @@ Les positions des noeuds sont paramétrables au travers de l'objet [layout](http
 * Écrire les identifiants uniprot dans les noeuds du réseau.
 * colorier les protéines appartenant à des classes GO communes.
 * Faire du diamètre des noeuds une fonction du nombre de partenaires protéiques.
+* N'afficher que les noeuds des protéines mesurées dans l'experience
+* Utiliser une échelle de couleur continue fonction de l'abondance pour colorier les noeuds
 
