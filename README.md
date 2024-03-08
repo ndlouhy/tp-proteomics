@@ -227,17 +227,19 @@ On peut accéder aux valeurs du DataFrame via des indices ou plages d'indice. La
 Il y a différentes manières de le faire, l'utilisation de `.iloc[slice_ligne,slice_colonne]` constitue une des solutions les plus simples. N'oublions pas que shape permet d'obtenir les dimensions (lignes et colonnes) du DataFrame.
 ###### Acceder aux cinq premières lignes de toutes les colonnes
 ```python
+cinq_prem_col = df.iloc[0:5,:]
 
 ```
 
 ###### Acceder à toutes les lignes de la dernière colonne
 ```python
+dernier_ligne = df.iloc[0:5,-1]
 
 ```
 
 ###### Acceder aux cinq premières lignes des colonnes 0, 2 et 3
 ```python
-
+colomns = df.iloc[0:5, [0,2,3]]
 ```
 
 ##### Conversion de type
