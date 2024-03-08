@@ -291,7 +291,9 @@ df.loc[ df['Gene Symbol'].isin(['fadR', 'arcA'] ) ]
 
 ##### 3. A partir de cette échantillon de ratio d'abondance,  estimez la moyenne $\mu$ et l'ecart-type $\sigma$ d'une loi normale.
 ```
-
+log = df['Log2 Corrected Abundance Ratio']
+mu = np.mean(df.iloc[:,4])
+sigma = np.std(df.iloc[:,4])
 
 ```
 
