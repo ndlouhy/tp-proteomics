@@ -30,7 +30,8 @@ Depuis le repertoire de votre repository Git, installez le package scipy et lanc
 $PATH_TO_CONDA_DIR/bin/conda install -c conda-forge scipy notebook matplotlib
 $PATH_TO_CONDA_DIR/bin/jupyter notebook
 ```
-
+#### Procédure Master BIOINFO LYON1
+Votre compte du master vous donne accès à une instance **JupyterHub** sur pédago service: `http://pedago-service.univ-lyon1.fr:8000`
 #### Procédure virtualenv
 
 Créer l'environnement virtuel.
