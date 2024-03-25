@@ -444,7 +444,7 @@ Valider le mapping produit par STRING en clickant sur 'Continue'.
 Combien d'interactions contient ce réseau ?
 
 ```
-
+38 interactions
 
 
 
@@ -460,9 +460,13 @@ Combien d'interactions sont supportées par chaque source ('Textmining', 'Experi
 
 Hint: l'onglet Analysis, donne accès aux nombre des interactions du réseau.
 ```
-
-
-
+Textmining : 29
+Experiments : 8
+Databases : 4
+Co-expression : 9
+Neighborhood : 1
+Gene Fusion : 0
+Co-occurence : 7
 
 ```
 
@@ -472,9 +476,7 @@ Consulter la rubrique 'Network Stats' dans l'onglet Analysis.
 
 Que peut-on en conclure sur les interactions de ce petit ensemble de protéines ?
 ```
-
-
-
+le prot intéragissent entre elles
 
 ```
 
@@ -484,7 +486,7 @@ ajouter les interacteurs de la première et de la deuxième couche.
 Que pouvez-vous en déduire sur les mécanismes activés par la présente de tétracycline ?
 ```
 
-
+les protéines semblent intéragir pour se protéger de la tétracycline
 
 
 ```
